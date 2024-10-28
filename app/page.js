@@ -1,101 +1,132 @@
-import Image from "next/image";
+'use client'
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import React from 'react';
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Image from 'next/image';
+import GroupIcon from '@mui/icons-material/Group';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import SearchIcon from '@mui/icons-material/Search';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import ArticleIcon from '@mui/icons-material/Article';
+import Button from '@mui/material/Button';
+import Slider from '@mui/material/Slider';
+import RangeSlider from "./components/RangeSlider";
+import RangeSliderTime from "./components/RangeSliderTime";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  return (
+    <main>
+      <ResponsiveAppBar/>
+      <Box sx={{ pl: 10, pr: 10, pt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center' }}>
+          <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 5,
+              }}
+            >
+              <Typography variant="h3">
+                Course Registration Made Easy
+              </Typography>
+              <Button variant="contained" color="primary" component="a" href="https://www.youtube.com/watch?v=iUMMb2LxTek" target = "_blank">
+                View Demo
+              </Button>
+               <a href="#welcome" style={{ textDecoration: 'none' }}>
+                  <Button variant="contained" color="primary">
+                    Get Started
+                  </Button>
+                </a>
+            </Box>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/embedded-pic.jpg"
+            alt="course registration pic"
+            width={700}
+            height={400}
+            style={{ maxWidth: '100%', height: 'auto' }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </Box>
+      <Box sx={{ p: 10, display: 'grid', alignItems: 'center', justifyContent: 'center' }}>
+          <Typography variant="h4">
+            Features
+          </Typography>
+      </Box>
+      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 35,}}>
+          <SearchIcon color="none" sx = {{fontSize: 60}}/>
+          <GroupAddIcon color="none" sx = {{fontSize: 60}}/>
+          <BorderColorIcon color="none" sx = {{fontSize: 60}}/>
+          <ArticleIcon color="none" sx = {{fontSize: 60}}/>
+        </Box>
+      </Box>
+      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10}}>
+        <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8,}}>
+          <Typography>Search professor/class info in popup <br></br> (Under construction)</Typography>
+          <Typography>Coordinate courses with friends <br></br> (Under construction)</Typography>
+          <Typography>Highlight courses by your preferences <br></br> (Under construction)</Typography>
+          <Typography>Generate course schedule with AI <br></br> (Under construction)</Typography>
+        </Box>
+      </Box>
+
+      <Box sx = {{display: 'flex', pt: 10, pl: 10, pb: 10, flexDirection: 'column', justifyContent: 'center'}}>
+          <div id="welcome"> 
+            <Typography variant="h5" sx ={{pt: 10}}>
+              Welcome to the SCU schedule helper
+            </Typography>
+          </div>
+          <Typography sx={{pt: 5}}>
+              Course registration can be tedious so we have designed a tool to help with the process. It is recommended to login with your scu email in order to access data from SCU course evaluations.
+          </Typography>
+          <Typography variant="h5" sx={{pt: 5}}>
+            Fill in your course preferences below:
+          </Typography>
+          <Typography variant="h6" sx={{pt: 5}}>
+            Preferred Professor Quality:
+          </Typography>
+          <RangeSlider></RangeSlider>
+          <Typography variant="h6" sx={{pt: 5}}>
+            Preferred Course Difficulty:
+          </Typography>
+          <RangeSlider></RangeSlider>
+          <Typography variant="h6" sx={{pt: 5}}>
+            Preferred Course Times:
+          </Typography>
+          <Typography sx={{pt: 5}}>
+            Time Window 1
+          </Typography>
+          <RangeSliderTime></RangeSliderTime>
+          <Typography sx={{pt: 5}}>
+            Time Window 2
+          </Typography>
+          <RangeSliderTime></RangeSliderTime>
+          <Typography variant="h6" sx={{pt: 5}}>
+            Meeting Day Preferences:
+          </Typography>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox />} label="M W F" />
+            <FormControlLabel control={<Checkbox />} label="T TH" />
+            <FormControlLabel control={<Checkbox />} label="M W" />
+            <FormControlLabel control={<Checkbox />} label="M" />
+            <FormControlLabel control={<Checkbox />} label="T" />
+            <FormControlLabel control={<Checkbox />} label="W" />
+            <FormControlLabel control={<Checkbox />} label="TH" />
+            <FormControlLabel control={<Checkbox />} label="F" />
+          </FormGroup>
+      </Box>
+      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', pb: 10}}>
+        <Button variant="contained" color="primary">
+            Submit Preferences
+        </Button>
+      </Box>
+    </main>
+       
   );
 }
