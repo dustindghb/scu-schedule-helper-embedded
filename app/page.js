@@ -126,6 +126,7 @@ export default function Home() {
             Submit Preferences
         </Button>
       </Box>
+      
     </main>
        
   );
