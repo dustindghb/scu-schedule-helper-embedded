@@ -32,7 +32,7 @@ function valuetext(value) {
 
 export default function RangeSlider() {
   // State to hold the slider values
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([20, 20]);
   const [minValue, setMinValue] = React.useState(value[0]);
   const [maxValue, setMaxValue] = React.useState(value[1]);
 
@@ -46,7 +46,6 @@ export default function RangeSlider() {
   return (
     <Box sx={{ width: 300 }}>
       <Slider
-        getAriaLabel={() => 'Temperature range'} // Accessibility label
         value={value} // Current slider value
         onChange={handleChange} // Function to handle changes
         valueLabelDisplay="auto" // Show value label on hover

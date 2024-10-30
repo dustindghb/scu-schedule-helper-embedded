@@ -16,16 +16,18 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 import RangeSlider from "./components/RangeSlider";
 import RangeSliderTime from "./components/RangeSliderTime";
+import PercentSlider from "./components/PercentSlider";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function Home() {
 
   return (
     <main>
       <ResponsiveAppBar/>
-      <Box sx={{ pl: 10, pr: 10, pt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ mx: 10, pt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center' }}>
           <Box
               sx={{
                 display: 'flex',
@@ -54,12 +56,12 @@ export default function Home() {
             style={{ maxWidth: '100%', height: 'auto' }}
           />
       </Box>
-      <Box sx={{ p: 10, display: 'grid', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ p: 2, display: 'grid', alignItems: 'center', justifyContent: 'center' }}>
           <Typography variant="h4">
             Features
           </Typography>
       </Box>
-      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Box sx={{p: 5, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 35,}}>
           <SearchIcon color="none" sx = {{fontSize: 60}}/>
           <GroupAddIcon color="none" sx = {{fontSize: 60}}/>
@@ -76,7 +78,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box sx = {{display: 'flex', pt: 10, pl: 10, pb: 10, flexDirection: 'column', justifyContent: 'center'}}>
+      <Box sx = {{display: 'flex', pt: 10, pb: 10, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
           <div id="welcome"> 
             <Typography variant="h5" sx ={{pt: 10}}>
               Welcome to the SCU schedule helper
@@ -88,15 +90,8 @@ export default function Home() {
           <Typography variant="h5" sx={{pt: 5}}>
             Fill in your course preferences below:
           </Typography>
-          <Typography variant="h6" sx={{pt: 5}}>
-            Preferred Professor Quality:
-          </Typography>
-          <RangeSlider></RangeSlider>
-          <Typography variant="h6" sx={{pt: 5}}>
-            Preferred Course Difficulty:
-          </Typography>
-          <RangeSlider></RangeSlider>
-          <Typography variant="h6" sx={{pt: 5}}>
+
+          <Typography variant="h6" sx={{pt: 10}}> 
             Preferred Course Times:
           </Typography>
           <Typography sx={{pt: 5}}>
@@ -106,22 +101,36 @@ export default function Home() {
           <Typography sx={{pt: 5}}>
             Time Window 2
           </Typography>
+
           <RangeSliderTime></RangeSliderTime>
-          <Typography variant="h6" sx={{pt: 5}}>
-            Meeting Day Preferences:
+          <Typography variant="h6" sx={{pt: 10}}>
+            How would you like RateMyProfessor and SCU Course Evaluation ratings to be weighed:
           </Typography>
-          <FormGroup>
-            <FormControlLabel control={<Checkbox />} label="M W F" />
-            <FormControlLabel control={<Checkbox />} label="T TH" />
-            <FormControlLabel control={<Checkbox />} label="M W" />
-            <FormControlLabel control={<Checkbox />} label="M" />
-            <FormControlLabel control={<Checkbox />} label="T" />
-            <FormControlLabel control={<Checkbox />} label="W" />
-            <FormControlLabel control={<Checkbox />} label="TH" />
-            <FormControlLabel control={<Checkbox />} label="F" />
-          </FormGroup>
+          <PercentSlider></PercentSlider>
+
+          <Typography variant="h6" sx={{pt: 10}}>
+            Select subjects of interest for general education courses:
+          </Typography>
+          <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', py: 5, gap: 5, pl: 10}}>
+            <FormControlLabel control={<Checkbox />} label="History" />
+            <FormControlLabel control={<Checkbox />} label="Film" />
+            <FormControlLabel control={<Checkbox />} label="Art" />
+            <FormControlLabel control={<Checkbox />} label="Music" />
+            <FormControlLabel control={<Checkbox />} label="Religion" />
+            <FormControlLabel control={<Checkbox />} label="Philosophy" />
+            <FormControlLabel control={<Checkbox />} label="Science" />
+            <FormControlLabel control={<Checkbox />} label="Social Science" />
+            <FormControlLabel control={<Checkbox />} label="Ethics" />
+            <FormControlLabel control={<Checkbox />} label="Anthropology" />
+            <FormControlLabel control={<Checkbox />} label="Business" />
+            <FormControlLabel control={<Checkbox />} label="Finance" />
+            <FormControlLabel control={<Checkbox />} label="Literature" />
+            <FormControlLabel control={<Checkbox />} label="Architecture" />
+            <FormControlLabel control={<Checkbox />} label="Foreign Language" />
+            <FormControlLabel control={<Checkbox />} label="Law" />
+        </Box>
       </Box>
-      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', pb: 10}}>
+      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Button variant="contained" color="primary">
             Submit Preferences
         </Button>

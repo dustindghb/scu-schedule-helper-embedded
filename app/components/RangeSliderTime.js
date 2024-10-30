@@ -64,7 +64,7 @@ function valuetext(value) {
 
 export default function RangeSliderTime() {
   // State to hold the slider values
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([20, 20]);
   const [minValue, setMinValue] = React.useState(value[0]);
   const [maxValue, setMaxValue] = React.useState(value[1]);
 
@@ -89,8 +89,7 @@ export default function RangeSliderTime() {
         marks={marks}
       />
       <Box sx={{ mt: 2 }}>
-        <Typography>Minimum Value: {minValue}</Typography>
-        <Typography>Maximum Value: {maxValue}</Typography>
+        <Typography>{minValue}:00 - {maxValue}:00</Typography>
       </Box>
     </Box>
   );
